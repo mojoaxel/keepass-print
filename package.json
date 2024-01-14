@@ -1,0 +1,35 @@
+{
+	"name": "keepass-print",
+	"version": "0.1.0",
+	"description": "Print password list from a keepass database for long-term backup",
+	"author": "Alexander Wunschik <dev@wunschik.net>",
+	"license": "AGPL-3.0-or-later",
+	"homepage": "https://github.com/mojoaxel/keepass-print#readme",
+	"bugs": {
+		"url": "https://github.com/mojoaxel/keepass-print/issues"
+	},
+	"keywords": [
+		"keepass",
+		"password",
+		"print",
+		"pdf-export"
+	],
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon ./bin/keepass-print.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/mojoaxel/keepass-print.git"
+	},
+	"dependencies": {
+		"commander": "^11.1.0",
+		"kdbxweb": "^2.1.1",
+		"prompts": "^2.4.2"
+	},
+	"devDependencies": {
+		"@fullstax/prettier-config": "^1.0.2",
+		"nodemon": "^3.0.2"
+	},
+	"prettier": "@fullstax/prettier-config"
+}
