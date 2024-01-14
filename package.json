@@ -1,6 +1,6 @@
 {
 	"name": "keepass-print",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Print password list from a keepass database for long-term backup",
 	"author": "Alexander Wunschik <dev@wunschik.net>",
 	"license": "AGPL-3.0-or-later",
@@ -16,7 +16,7 @@
 	],
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon ./bin/keepass-print.js"
+		"dev": "nodemon -e js,ejs ./bin/keepass-print.js"
 	},
 	"repository": {
 		"type": "git",
@@ -24,6 +24,7 @@
 	},
 	"dependencies": {
 		"commander": "^11.1.0",
+		"ejs": "^3.1.9",
 		"kdbxweb": "^2.1.1",
 		"prompts": "^2.4.2"
 	},

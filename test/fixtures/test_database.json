@@ -1,0 +1,56 @@
+{
+  "header": {
+    "kdbxFile": "test_database.kdbx",
+    "version": "3.1"
+  },
+  "groups": [
+    {
+      "name": "Root",
+      "notes": "",
+      "tags": [],
+      "times": {
+        "creationTime": "2024-01-13T17:19:02.000Z",
+        "lastModTime": "2024-01-13T17:19:02.000Z",
+        "lastAccessTime": "2024-01-13T17:19:02.000Z"
+      },
+      "groups": [],
+      "entries": [
+        {
+          "tags": [
+            "entry",
+            "test"
+          ],
+          "times": {
+            "creationTime": "2024-01-13T17:37:53.000Z",
+            "lastModTime": "2024-01-14T18:31:15.000Z",
+            "lastAccessTime": "2024-01-14T18:31:15.000Z",
+            "expires": true,
+            "expiryTime": "2025-01-01T22:59:51.000Z"
+          },
+          "fields": {
+            "Notes": "This is note for test-entry 1",
+            "Password": "TestPassword1",
+            "Title": "Test Entry 1",
+            "URL": "www.test-url-1.io",
+            "UserName": "testUser1"
+          }
+        },
+        {
+          "tags": [],
+          "times": {
+            "creationTime": "2024-01-14T14:13:26.000Z",
+            "lastModTime": "2024-01-14T14:13:42.000Z",
+            "lastAccessTime": "2024-01-14T14:13:42.000Z"
+          },
+          "fields": {
+            "Notes": "This is note for test-entry 2",
+            "Password": "TestPassword2",
+            "Title": "Test Entry 2",
+            "URL": "www.test-url-2.io",
+            "UserName": "testUser2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -27,7 +27,7 @@ Arguments:
 Options:
   -V, --version            output the version number
   --password [password]    password to access the database
-  --outFormat [outFormat]  supported output formats (["json"]) (default: "json")
+  --outFormat [outFormat]  supported output formats (["json", "markdown"]) (default: "json")
   --key [keyFile]          path to the key-file to access the database
   --verbose                verbose output (default: false)
   -h, --help               display help for command
@@ -35,16 +35,24 @@ Options:
 
 #### Examples
 
-Basic usage:
-
+Basic usage (export json):
 ```
 $> keepass-print ./test/fixtures/test_database.kdbx ./test/output/test_database.json
 ```
 
 Provide the password as parameter:
-
 ```
 $> keepass-print --password "pass123" ./test/fixtures/test_database.kdbx ./test/output/test_database.json
+```
+
+Provide a key-file instead of a password:
+```
+$> keepass-print --key ./secret/key ./test/fixtures/test_database.kdbx ./test/output/test_database.json
+```
+
+Export as Markdown:
+```
+$> keepass-print --outFormat markdown ./test/fixtures/test_database.kdbx ./test/output/test_database.md
 ```
 
 ## Legal

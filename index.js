@@ -5,7 +5,7 @@ var kdbxweb = require('kdbxweb');
 const { kdbxToJson } = require('./lib/kdbx/kdbxToJson.js');
 const { getExporter } = require('./lib/exporters/index.js');
 
-const OUTPUT_FORMATS = ['json'];
+const OUTPUT_FORMATS = ['json', 'markdown'];
 
 /**
  * @typedef {Object} ExportOptions
