@@ -5,11 +5,9 @@ var kdbxweb = require('kdbxweb');
 const { kdbxToJson } = require('./lib/kdbx/kdbxToJson.js');
 const { getExporter } = require('./lib/exporters/index.js');
 
-const OUTPUT_FORMATS = ['json', 'markdown'];
-
 /**
  * @typedef {Object} ExportOptions
- * @param {string} outFormat keyof OUTPUT_FORMATS
+ * @param {string} outFormat keyof SUPPORTED_OUTPUT_FORMATS
  * @param {string | undefined} password
  * @param {string | undefined} keyFilePath
  * @param {boolean} verbose
@@ -64,6 +62,5 @@ async function exportDatabase(databasePath, outputPath, options) {
 }
 
 module.exports = {
-	OUTPUT_FORMATS,
 	exportDatabase,
 };

@@ -5,8 +5,9 @@ const { program } = require('commander');
 const prompts = require('prompts');
 
 const PKG = require('../package.json');
-const { exportDatabase, OUTPUT_FORMATS } = require('../index.js');
-const outputFormats = OUTPUT_FORMATS.map(format => `"${format}"`).join(', ');
+const { exportDatabase } = require('../index.js');
+const { SUPPORTED_OUTPUT_FORMATS } = require('../lib/exporters/index.js');
+const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join(', ');
 
 (async () => {
 	program
