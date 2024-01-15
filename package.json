@@ -1,6 +1,6 @@
 {
 	"name": "keepass-print",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Print password list from a keepass database for long-term backup",
 	"author": "Alexander Wunschik <dev@wunschik.net>",
 	"license": "AGPL-3.0-or-later",
@@ -26,7 +26,8 @@
 		"commander": "^11.1.0",
 		"ejs": "^3.1.9",
 		"kdbxweb": "^2.1.1",
-		"prompts": "^2.4.2"
+		"prompts": "^2.4.2",
+		"qrcode": "^1.5.3"
 	},
 	"devDependencies": {
 		"@fullstax/prettier-config": "^1.0.2",

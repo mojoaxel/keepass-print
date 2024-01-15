@@ -4,6 +4,7 @@
 		"",
 		"kdbx",
 		"kdbxweb",
-		"keepass"
+		"keepass",
+		"qrcode"
 	]
 }
