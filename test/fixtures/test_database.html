@@ -1,146 +1,135 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>test_database.kdbx</title>
-	<meta charset="utf-8">
-	<style>
-		html {
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 16px;
-		}
-		h1, h2, h3 {
-			margin-top: 2rem;
-			margin-bottom: 0;
-			border-bottom: 2px solid #ccc;
-		}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>test_database.kdbx</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="keepass-print" />
+    <meta name="creation-date" content="2024-01-15T21:40:46.121Z" />
+    <style>
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        border-bottom: 2px solid #ccc;
+      }
+      h2 {
+        color: #666;
+      }
 
-		.user, .password {
-			font-family: monospace;
-			font-size: large;
-		}
-		.group-tags, .entry-tags {
-			display: none;
-		}
-		.tags {
-			list-style: none;
-			font-size: small;
-			padding: 0;
-			margin: 0;
-		}
-		.tags .tag {
-			display: inline-block;
-			padding: 0.25rem 0.5rem;
-			margin: 0 0.25rem;
-			border-radius: 0.25rem;
-			background-color: #eee;
-		}
-		.entry-fields:empty {
-			display: none;
-		}
-		.entry-fields li {
-			margin: 0;
-		}
-		article, section {
-			display: block;
-			margin-left: 1rem;
-		}
-	</style>
-</head>
-<body>
-	<div class="container">
-		<h1>test_database.kdbx</h1>
+      .user,
+      .password {
+        font-family: monospace;
+        font-size: large;
+      }
+      .group-tags,
+      .entry-tags {
+        display: none;
+      }
+      .tags {
+        list-style: none;
+        font-size: small;
+        padding: 0;
+        margin: 0;
+      }
+      .tags .tag {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        margin: 0 0.25rem;
+        border-radius: 0.25rem;
+        background-color: #eee;
+      }
+      .entry-fields:empty {
+        display: none;
+      }
+      .entry-fields li {
+        margin: 0;
+      }
+      article,
+      section {
+        display: block;
+        margin-left: 1rem;
+      }
+      section {
+        break-inside: avoid;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>test_database.kdbx</h1>
+      <small class="subtitle">
+        <strong>created:</strong> 2024-01-15T21:40:46.121Z
+      </small>
 
-		<!-- creation date -->
-		<small class="subtitle">
-			<strong>created:</strong> 2024-01-14T22:14:00.494Z
-		</small>
-		
-		<article class="group">
-		
-		
-			<!-- group.name -->
-			<h2>Root</h2>
+      <article class="group">
+        <h2>Root</h2>
+        <small class="subtitle">
+          <strong>last modified:</strong> 2024-01-14T21:47:42.000Z
+        </small>
 
-			<!-- group.times.lastModTime -->
-			<small class="subtitle">
-				<strong>last modified:</strong> 2024-01-14T21:47:42.000Z
-			</small>
-			
-			<!-- group.tags -->
-			
-			
-			<!-- group.notes -->
-			
-				<pre>This a note for the Root group.</pre>
-			
-		
-			<!-- group.entries -->
-			
-			<section class="entry">
-				<h3>Test Entry 1</h3>
-				
-				<!-- group.times.lastModTime -->
-				<small class="subtitle">
-					<strong>last modified:</strong> 2024-01-14T18:17:42.000Z
-				</small>
-				
-				<!-- entry.tags -->
-				
+        <pre>This a note for the Root group.</pre>
 
-				<!-- entry.fields -->
-				<ul class="entry-fields">
-					
-					<li><strong>url:</strong> <a href="www.test-url-1.io">www.test-url-1.io</a></li>
-					
-					
-					<li><strong>username:</strong> <span class="user">testUser1</span></li>
-					
-					
-					<li><strong>password:</strong> <span class="password">TestPassword1</span></li>
-					
-				</ul>
-				
-				<!-- entry.fields.Notes -->
-				
-					<pre><code>This is note for test-entry 1</code></pre>
-				
-				
-			</section>
-			
-			<section class="entry">
-				<h3>Test Entry 2</h3>
-				
-				<!-- group.times.lastModTime -->
-				<small class="subtitle">
-					<strong>last modified:</strong> 2024-01-14T14:13:42.000Z
-				</small>
-				
-				<!-- entry.tags -->
-				
+        <section class="entry">
+          <h3>Test Entry 1</h3>
+          <small class="subtitle">
+            <strong>last modified:</strong> 2024-01-14T18:17:42.000Z
+          </small>
 
-				<!-- entry.fields -->
-				<ul class="entry-fields">
-					
-					<li><strong>url:</strong> <a href="www.test-url-2.io">www.test-url-2.io</a></li>
-					
-					
-					<li><strong>username:</strong> <span class="user">testUser2</span></li>
-					
-					
-					<li><strong>password:</strong> <span class="password">TestPassword2</span></li>
-					
-				</ul>
-				
-				<!-- entry.fields.Notes -->
-				
-					<pre><code>This is note for test-entry 2</code></pre>
-				
-				
-			</section>
-			
-		
-		
-		</article>
-	</div>
-</body>
+          <ul class="entry-fields">
+            <li>
+              <strong>url:</strong>
+              <a href="www.test-url-1.io">www.test-url-1.io</a>
+            </li>
+
+            <li>
+              <strong>username:</strong> <span class="user">testUser1</span>
+            </li>
+
+            <li>
+              <strong>password:</strong>
+              <span class="password">TestPassword1</span>
+            </li>
+          </ul>
+
+          <pre>This is note for test-entry 1</pre>
+        </section>
+
+        <section class="entry">
+          <h3>Test Entry 2</h3>
+          <small class="subtitle">
+            <strong>last modified:</strong> 2024-01-14T14:13:42.000Z
+          </small>
+
+          <ul class="entry-fields">
+            <li>
+              <strong>url:</strong>
+              <a href="www.test-url-2.io">www.test-url-2.io</a>
+            </li>
+
+            <li>
+              <strong>username:</strong> <span class="user">testUser2</span>
+            </li>
+
+            <li>
+              <strong>password:</strong>
+              <span class="password">TestPassword2</span>
+            </li>
+          </ul>
+
+          <pre>This is note for test-entry 2</pre>
+        </section>
+      </article>
+    </div>
+    <hr class="eof" />
+  </body>
 </html>

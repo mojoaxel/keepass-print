@@ -2,5 +2,6 @@
 	"recommendations": [
 		"esbenp.prettier-vscode",
 		"streetsidesoftware.code-spell-checker",
+		"digitalbrainstem.javascript-ejs-support",
 	]
 }
