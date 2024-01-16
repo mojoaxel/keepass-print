@@ -2,6 +2,8 @@
 
 Print password list from a keepass database for long-term backup.
 
+> ⚠️ **WARNING**: Please exercise caution when using this tool! It takes you beyond encrypted realms, making your passwords readable by multiple npm libraries and tools like browsers. Additionally, the resulting output documents may leave traces on your computer, such as in your trash bin or even in your printer's cache. Be aware of these potential risks!
+
 ## Setup
 
 To use `keepass-print` as a cli tool install it globally:
