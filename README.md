@@ -62,6 +62,12 @@ Export as Html:
 $> keepass-print --outFormat html ./test/fixtures/test_database.kdbx ./test/output/test_database.html
 ```
 
+## Dependencies
+
+This tool makes heavy usage of the following libraries:
+- [kdbxweb](https://www.npmjs.com/package/kdbxweb)
+- [ejs](https://www.npmjs.com/package/ejs)
+
 ## Legal
 
 - Copyright 2024 by [Alexander Wunschik](https://github.com/mojoaxel), all rights reserved.
