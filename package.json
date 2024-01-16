@@ -14,8 +14,10 @@
 		"print",
 		"pdf-export"
 	],
-	"main": "index.js",
+	"bin": "./bin/keepass-print.js",
+	"main": "./index.js",
 	"scripts": {
+		"start": "node ./bin/keepass-print.js",
 		"dev": "nodemon -e js,ejs ./bin/keepass-print.js"
 	},
 	"repository": {
