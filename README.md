@@ -18,6 +18,8 @@ npm install -g keepass-print
 
 ### command-line-interface (CLI)
 
+If no password and no key-file is provided the tools ask to enter a password.
+
 ```
 $> keepass-print --help
 Usage: keepass-print [options] <database> <output>
@@ -30,8 +32,8 @@ Arguments:
 
 Options:
   -V, --version            output the version number
-  --password [password]    password to access the database
   --outFormat [outFormat]  supported output formats (["json", "markdown", "html"]) (default: "json")
+  --password [password]    password to access the database
   --key [keyFile]          path to the key-file to access the database
   --verbose                verbose output (default: false)
   -h, --help               display help for command
@@ -41,27 +43,27 @@ Options:
 
 Basic usage (export json):
 ```
-$> keepass-print ./test/fixtures/test_database.kdbx ./test/output/test_database.json
+$> keepass-print ./database.kdbx ./database.json
 ```
 
 Provide the password as parameter:
 ```
-$> keepass-print --password "pass123" ./test/fixtures/test_database.kdbx ./test/output/test_database.json
+$> keepass-print --password "pass123" ./database.kdbx ./database.json
 ```
 
 Provide a key-file instead of a password:
 ```
-$> keepass-print --key ./secret/key ./test/fixtures/test_database.kdbx ./test/output/test_database.json
+$> keepass-print --key ./secret/key ./database.kdbx ./database.json
 ```
 
 Export as Markdown:
 ```
-$> keepass-print --outFormat markdown ./test/fixtures/test_database.kdbx ./test/output/test_database.md
+$> keepass-print --outFormat markdown ./database.kdbx ./database.md
 ```
 
 Export as Html:
 ```
-$> keepass-print --outFormat html ./test/fixtures/test_database.kdbx ./test/output/test_database.html
+$> keepass-print --outFormat html ./database.kdbx ./database.html
 ```
 
 ## Dependencies
