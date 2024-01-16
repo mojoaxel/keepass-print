@@ -12,9 +12,8 @@ const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join
 	program
 		.version(PKG.version)
 		.description(`${PKG.description}.`)
-		.option('--password [password]', 'password to access the database')
-		//.option('--noteFormat [noteFormat]', 'format of the notes (default: markdown)', 'markdown')
 		.option('--outFormat [outFormat]', `supported output formats ([${outputFormats}])`, 'json')
+		.option('--password [password]', 'password to access the database')
 		.option('--key [keyFile]', 'path to the key-file to access the database')
 		.option('--verbose', 'verbose output', false)
 		.argument('<database>', 'path to the kdbx database file')
