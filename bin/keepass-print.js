@@ -23,12 +23,10 @@ async function main() {
 
 	const options = program.opts();
 	const { outFormat, key, verbose } = options;
-	verbose && console.log(`options: ${JSON.stringify(program.opts(), null, 2)}`);
+	verbose && console.log(`options: ${JSON.stringify(options, null, 2)}`);
 
 	const [database, output] = program.processedArgs;
 	verbose && console.log(`database: ${database}`);
-
-	let password = options.password;
 
 	// get path the cool was called from
 	const cwd = process.cwd();
@@ -64,6 +62,9 @@ async function main() {
 		}
 	}
 
+	let password = options.password;
+	let keyFileAbsPath;
+
 	// if the password is not provided, ask the user
 	if (!key) {
 		if (!password) {
@@ -75,6 +76,14 @@ async function main() {
 			});
 			password = response.password;
 		}
+	} else {
+		// check if key-file exists
+		keyFileAbsPath = path.resolve(cwd, key);
+		verbose && console.log(`keyFileAbsPath: ${keyFileAbsPath}`);
+		await fs.access(keyFileAbsPath, fs.constants.F_OK).catch(() => {
+			console.error(`Key-file "${key}" not found!`);
+			return process.exit(1);
+		});
 	}
 
 	/**
@@ -83,7 +92,7 @@ async function main() {
 	const exportOptions = {
 		outFormat,
 		password,
-		keyFile: key,
+		keyFile,
 		verbose,
 	};
 
