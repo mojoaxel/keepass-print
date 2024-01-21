@@ -1,6 +1,6 @@
 {
 	"name": "keepass-print",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Print password list from a keepass database for long-term backup",
 	"author": "Alexander Wunschik <dev@wunschik.net>",
 	"license": "AGPL-3.0-or-later",
