@@ -1,6 +1,7 @@
 #!/bin/env node
 
 const path = require('path');
+const fs = require('fs/promises');
 const { program } = require('commander');
 const prompts = require('prompts');
 
@@ -8,7 +9,7 @@ const PKG = require('../package.json');
 const { exportDatabase, SUPPORTED_OUTPUT_FORMATS } = require('../index.js');
 const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join(', ');
 
-(async () => {
+async function main() {
 	program
 		.version(PKG.version)
 		.description(`${PKG.description}.`)
@@ -28,6 +29,42 @@ const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join
 	verbose && console.log(`database: ${database}`);
 
 	let password = options.password;
+
+	// get path the cool was called from
+	const cwd = process.cwd();
+
+	// check if database exists
+	const databaseAbsPath = path.resolve(cwd, database);
+	verbose && console.log(`databaseAbsPath: ${databaseAbsPath}`);
+	await fs.access(databaseAbsPath, fs.constants.F_OK).catch(() => {
+		console.error(`KDBX database file "${database}" not found!`);
+		return process.exit(1);
+	});
+
+	// check if outputDir exists
+	const outputAbsPath = path.resolve(cwd, output);
+	verbose && console.log(`outputAbsPath: ${outputAbsPath}`);
+	const outputDir = path.dirname(outputAbsPath);
+	verbose && console.log(`outputDir: ${outputDir}`);
+	try {
+		await fs.stat(outputDir);
+	} catch (error) {
+		const response = await prompts({
+			type: 'confirm',
+			name: 'create',
+			message: [
+				`Output directory "${path.dirname(output)}" does not exist!`,
+				`Do you want to create it?`,
+			].join(' '),
+		});
+		if (response.create) {
+			await fs.mkdir(outputDir, { recursive: true });
+		} else {
+			return process.exit(1);
+		}
+	}
+
+	// if the password is not provided, ask the user
 	if (!key) {
 		if (!password) {
 			verbose && console.log(`No key-file and no password provided. Asking user...`);
@@ -51,7 +88,7 @@ const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join
 	};
 
 	try {
-		await exportDatabase(database, output, exportOptions);
+		await exportDatabase(databaseAbsPath, outputAbsPath, exportOptions);
 		console.log(
 			`Successfully exported database "${path.basename(
 				database
@@ -66,4 +103,8 @@ const outputFormats = SUPPORTED_OUTPUT_FORMATS.map(format => `"${format}"`).join
 		);
 		return process.exit(1);
 	}
+}
+
+(async () => {
+	await main();
 })();
