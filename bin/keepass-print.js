@@ -92,7 +92,7 @@ async function main() {
 	const exportOptions = {
 		outFormat,
 		password,
-		keyFile,
+		keyFile: keyFileAbsPath,
 		verbose,
 	};
 
